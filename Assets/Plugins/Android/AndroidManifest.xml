@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.unity3d.player"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <uses-sdk
+      android:minSdkVersion="22"
+      android:targetSdkVersion="36"
+      tools:overrideLibrary="com.google.firebase.auth, 
+                           com.google.firebase.app.unity,
+                           com.google.firebase.analytics,
+                           com.google.firebase.components,
+                           com.google.firebase.common,
+                           com.google.firebase.installations" />
+
+  <application
+    android:requestLegacyExternalStorage="true"
+    android:usesCleartextTraffic="true"
+    
+    android:name="androidx.multidex.MultiDexApplication">
+    <activity android:name="com.unity3d.player.UnityPlayerActivity"
+              android:theme="@style/UnityThemeSelector">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+  </application>
+
+  <!--
+  <uses-permission
+  <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+-->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="replace"/>
+  <!--
+  <uses-permission
+      android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+      android:maxSdkVersion="28"
+      tools:ignore="ScopedStorage" />
+      
+
+-->
+</manifest>
+   
